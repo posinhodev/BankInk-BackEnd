@@ -18,17 +18,36 @@ public class TarjetaService {
     }
 
     public Tarjeta generarNumeroTarjeta(Long productId) {
-        // Implementa la lógica para generar el número de tarjeta a partir del productId y otros requerimientos.
-        String numeroTarjeta = "1234567890123456"; // Ejemplo: número de tarjeta ficticio
         Tarjeta tarjeta = new Tarjeta();
-        tarjeta.setProductId(productId);
+
+        String digitosFijos = String.format("%06d", productId);
+
+        String digitosAleatorios = generarDigitosAleatorios(10);
+
+        String numeroTarjeta = digitosFijos + digitosAleatorios;
+
         tarjeta.setNumeroTarjeta(numeroTarjeta);
+
         return tarjetaRepository.save(tarjeta);
+    }
+
+    private String generarDigitosAleatorios(int numDigitos) {
+        Random random = new Random();
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 0; i < numDigitos; i++) {
+            int digito = random.nextInt(10);
+            sb.append(digito);
+        }
+
+        return sb.toString();
     }
 
     public void activarTarjeta(Long cardId) {
         Tarjeta tarjeta = tarjetaRepository.findById(cardId)
                 .orElseThrow(() -> new RuntimeException("Tarjeta no encontrada"));
+        LocalDate fechaVencimiento = LocalDate.now().plusYears(3);
+        tarjeta.setFechaVencimiento(String.valueOf(fechaVencimiento));
         tarjeta.setActiva(true);
         tarjetaRepository.save(tarjeta);
     }
