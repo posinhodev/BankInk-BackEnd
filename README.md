@@ -1,12 +1,5 @@
 # Backend Para Bank Ink
 
-**Table of Contents**
-
-[TOCM]
-
-[TOC]
-
-
 ## Introducción
 
 ## Tecnologías utilizadas
@@ -60,4 +53,4 @@ Despues de tener la aplicacion ejecutandose vamos a dirigirnos al siguiente url 
 | Jose Santiago Posso Parra | jose.possop12@gmail.com | 3126917902 | https://www.linkedin.com/in/jose-santiago-posso-parra/ |
 
                
-##End
+## End
