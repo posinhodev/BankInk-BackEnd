@@ -1,6 +1,14 @@
 # Backend Para Bank Ink
 
-## Introducción
+## Requerimientos
+
+1. Generar número de tarjeta.
+2. Activar tarjeta.
+3. Bloquear tarjeta.
+4. Recargar saldo. 
+5. Consultar saldo.
+6. Transaccion de compra.
+7. Consultar transaccion.
 
 ## Tecnologías utilizadas
 Para este proyecto fueron utlizadas las tecnologias descritas a continuacion:
