@@ -1,0 +1,134 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "BankInk",
+    "dateExported": "2023-05-21T17:20:16.761Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "954e9227-66ba-41bd-95b9-325dab50ff92",
+            "colId": "e99a0893-8921-40e3-9d83-41e936589bb2",
+            "containerId": "",
+            "name": "Generar número de tarjeta",
+            "url": "http://localhost:8089/bank/api/card/123456/number",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2023-05-18T23:49:06.202Z",
+            "modified": "2023-05-20T19:36:02.323Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"nombreTitular\": \"miguel\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "fd4c5c66-5af0-4de6-9aad-ca20ea6a368a",
+            "colId": "e99a0893-8921-40e3-9d83-41e936589bb2",
+            "containerId": "",
+            "name": "Activar Tarjeta",
+            "url": "http://localhost:8089/bank/api/card/enroll?cardId=1",
+            "method": "POST",
+            "sortNum": 15000,
+            "created": "2023-05-19T00:38:33.948Z",
+            "modified": "2023-05-20T18:13:55.822Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "cardId",
+                    "value": "1",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "258ea382-0b2d-44a5-8411-8e11a83882f6",
+            "colId": "e99a0893-8921-40e3-9d83-41e936589bb2",
+            "containerId": "",
+            "name": "Bloquear tarjeta",
+            "url": "http://localhost:8089/bank/api/card/2",
+            "method": "DELETE",
+            "sortNum": 16250,
+            "created": "2023-05-19T01:01:38.569Z",
+            "modified": "2023-05-20T15:46:43.217Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "0f85f31c-6831-488e-b3ad-457dc78b4b55",
+            "colId": "e99a0893-8921-40e3-9d83-41e936589bb2",
+            "containerId": "",
+            "name": "Recargar saldo",
+            "url": "http://localhost:8089/bank/api/card/balance?cardId=1&monto=1000",
+            "method": "POST",
+            "sortNum": 17500,
+            "created": "2023-05-19T00:51:06.892Z",
+            "modified": "2023-05-20T19:36:14.307Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "cardId",
+                    "value": "1",
+                    "isPath": false
+                },
+                {
+                    "name": "monto",
+                    "value": "1000",
+                    "isPath": false
+                }
+            ],
+            "tests": []
+        },
+        {
+            "_id": "370157a6-e384-462a-a1dd-8063cf087e44",
+            "colId": "e99a0893-8921-40e3-9d83-41e936589bb2",
+            "containerId": "",
+            "name": "Consulta de saldo",
+            "url": "http://localhost:8089/bank/api/card/balance/1",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2023-05-18T23:47:46.332Z",
+            "modified": "2023-05-20T19:14:15.755Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "cb81bf9d-4780-48a3-aeb9-8fd84764e01d",
+            "colId": "e99a0893-8921-40e3-9d83-41e936589bb2",
+            "containerId": "",
+            "name": "Transacción de compra",
+            "url": "http://localhost:8089/bank/api/transaction/purchase",
+            "method": "POST",
+            "sortNum": 70000,
+            "created": "2023-05-19T01:02:10.063Z",
+            "modified": "2023-05-20T19:36:45.499Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"tarjetaId\": 2,\n  \"monto\": 125\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "b4eda8b0-a5f0-48d7-a810-b638a49258c9",
+            "colId": "e99a0893-8921-40e3-9d83-41e936589bb2",
+            "containerId": "",
+            "name": "Consultar transacción",
+            "url": "http://localhost:8089/bank/api/transaction/1",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2023-05-19T01:02:52.358Z",
+            "modified": "2023-05-20T15:57:37.991Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}
